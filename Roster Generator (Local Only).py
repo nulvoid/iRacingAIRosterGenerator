@@ -8,6 +8,8 @@ directory_path = r"C:\Users\Admin\Documents\iRacing\airosters"
 car_class = input("Late Model or Super Late Model: ")
 folder_name = input("Enter roster name: ")
 total_cars = int(input("Enter the number of cars desired for roster: "))
+if total_cars > 60:
+    total_cars = 60
 
 with open("first_names.txt") as f:
     first_names = f.read().splitlines()
