@@ -40,7 +40,7 @@ Where every name is on its own line.
 # To Do
 - [x] Add Late Models
 - [x] Add Super Late Models
-- [ ] Rewrite car class selection to easily allow for the addition of new car classes
+- [x] Rewrite car class selection to easily allow for the addition of new car classes
 - [ ] Add SK Modifieds
 - [ ] Add Tour Modifieds
 - [ ] \(Optional) Add SK and Tour Modified roster option (Fun at trucks like Oxford)
