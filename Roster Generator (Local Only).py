@@ -5,7 +5,42 @@ import uuid
 
 directory_path = r"C:\Users\Admin\Documents\iRacing\airosters"
 
-car_class = input("Late Model or Super Late Model: ")
+while True:
+    print("Enter desired car class. (ARCA, Indycar, Late Model, NASCAR Cup, NASCAR Cup 87, NASCAR Truck, NASCAR XFINITY, SK Modified, Street Stock, Super Late Model, Tour Modified)")
+    car_class = input("> ")
+    if car_class.lower() == "arca":
+        print("ARCA cars have not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "indycar":
+        print("Indycar has not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "late model":
+        car_id = 164
+        car_path = "latemodel2023"
+        sponsor1_range = [0, 225, 226, 227, 228, 229, 230, 231, 232]
+        car_scheme_range = range(1, 25)
+        break
+    elif car_class.lower() == "nascar cup":
+        print("NASCAR Cup has not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "nascar cup 87":
+        print("NASCAR Cup 87 has not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "nascar truck":
+        print("NASCAR Trucks have not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "nascar xfinity":
+        print("NASCAR XFINITY has not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "sk modified":
+        print("SK Modifieds have not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "street stock":
+        print("Street Stocks have not yet been added to this program. Please choose another car class.")
+    elif car_class.lower() == "super late model":
+        car_id = 54
+        car_path = "superlatemodel"
+        sponsor1_range = [0, 111, 112, 113, 114, 115]
+        car_scheme_range = range(0, 24)
+        break
+    elif car_class.lower() == "tour modified":
+        print("Tour Modifieds have not yet been added to this program. Please choose another car class.")
+    else:
+        print("Please enter a valid option.")
+
 folder_name = input("Enter roster name: ")
 total_cars = int(input("Enter the number of cars desired for roster: "))
 if total_cars > 60:
@@ -40,16 +75,6 @@ drivers = []
 used_car_numbers = []
 
 for i in range(total_cars):
-    if car_class == "Late Models":
-        car_id = 164
-        car_path = "latemodel2023"
-        sponsor1_range = [0, 225, 226, 227, 228, 229, 230, 231, 232]
-        car_scheme_range = range(1, 25)
-    else:  # assume "Super Late Models"
-        car_id = 54
-        car_path = "superlatemodel"
-        sponsor1_range = [0, 111, 112, 113, 114, 115]
-        car_scheme_range = range(0, 24)
     car_number = random.randint(0, 99)
     if random.random() < 0.5:  # 50% probability
         car_number = f"{car_number:02d}"
@@ -107,7 +132,6 @@ print(roster_json)
 
 if not os.path.exists(os.path.join(directory_path, folder_name)):
     os.makedirs(os.path.join(directory_path, folder_name))
-
 file_path = os.path.join(directory_path, folder_name, "roster.json")
 with open(file_path, "w") as f:
     f.write(roster_json)
