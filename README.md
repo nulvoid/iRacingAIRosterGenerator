@@ -56,3 +56,4 @@ Where every name is on its own line.
 - [ ] Rewrite old version of program that references Github repositories for names and colors
 - [ ] Figure out a better way of generating car colors instead of having a database of colors
 - [ ] Figure out an easier way of fiding values for things like sponsor ranges and paint scheme ranges than hand making rosters with the first and last options and hoping that the numbers match perfectly
+- [ ] GUI
