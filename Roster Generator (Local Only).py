@@ -27,7 +27,11 @@ while True:
     elif car_class.lower() == "nascar xfinity":
         print("NASCAR XFINITY has not yet been added to this program. Please choose another car class.")
     elif car_class.lower() == "sk modified":
-        print("SK Modifieds have not yet been added to this program. Please choose another car class.")
+        car_id = 2
+        car_path = "skmodified"
+        sponsor1_range = [0]
+        car_scheme_range = range(1, 24)
+        break
     elif car_class.lower() == "street stock":
         print("Street Stocks have not yet been added to this program. Please choose another car class.")
     elif car_class.lower() == "super late model":
