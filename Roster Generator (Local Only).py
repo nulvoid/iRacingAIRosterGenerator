@@ -41,7 +41,7 @@ while True:
         car_scheme_range = range(0, 24)
         break
     elif car_class.lower() == "tour modified":
-        car_id = 2
+        car_id = 31
         car_path = "skmodified\\tour"
         sponsor1_range = [0]
         car_scheme_range = range(1, 24)
