@@ -41,7 +41,11 @@ while True:
         car_scheme_range = range(0, 24)
         break
     elif car_class.lower() == "tour modified":
-        print("Tour Modifieds have not yet been added to this program. Please choose another car class.")
+        car_id = 2
+        car_path = "skmodified\\tour"
+        sponsor1_range = [0]
+        car_scheme_range = range(1, 24)
+        break
     else:
         print("Please enter a valid option.")
 
