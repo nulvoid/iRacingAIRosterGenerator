@@ -1,46 +1,44 @@
-import os
-import random
-import json
-import uuid
+import os, random, json, uuid, re
 
 directory_path = r"C:\Users\Admin\Documents\iRacing\airosters"
+unallowedchars = re.compile(r'[\ / : * ? " < > |]')
 
 while True:
     print("Enter desired car class. (ARCA, Indycar, Late Model, NASCAR Cup, NASCAR Cup 87, NASCAR Truck, NASCAR XFINITY, SK Modified, Street Stock, Super Late Model, Tour Modified)")
-    car_class = input("> ")
-    if car_class.lower() == "arca":
+    car_class = input("> ").lower()
+    if car_class == "arca":
         print("ARCA cars have not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "indycar":
+    elif car_class == "indycar":
         print("Indycar has not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "late model":
+    elif car_class == "late model":
         car_id = 164
         car_path = "latemodel2023"
         sponsor1_range = [0, 225, 226, 227, 228, 229, 230, 231, 232]
         car_scheme_range = range(1, 25)
         break
-    elif car_class.lower() == "nascar cup":
+    elif car_class == "nascar cup":
         print("NASCAR Cup has not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "nascar cup 87":
+    elif car_class == "nascar cup 87":
         print("NASCAR Cup 87 has not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "nascar truck":
+    elif car_class == "nascar truck":
         print("NASCAR Trucks have not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "nascar xfinity":
+    elif car_class == "nascar xfinity":
         print("NASCAR XFINITY has not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "sk modified":
+    elif car_class == "sk modified":
         car_id = 2
         car_path = "skmodified"
         sponsor1_range = [0]
         car_scheme_range = range(1, 24)
         break
-    elif car_class.lower() == "street stock":
+    elif car_class == "street stock":
         print("Street Stocks have not yet been added to this program. Please choose another car class.")
-    elif car_class.lower() == "super late model":
+    elif car_class == "super late model":
         car_id = 54
         car_path = "superlatemodel"
         sponsor1_range = [0, 111, 112, 113, 114, 115]
         car_scheme_range = range(0, 24)
         break
-    elif car_class.lower() == "tour modified":
+    elif car_class == "tour modified":
         car_id = 31
         car_path = "skmodified\\tour"
         sponsor1_range = [0]
@@ -49,10 +47,23 @@ while True:
     else:
         print("Please enter a valid option.")
 
-folder_name = input("Enter roster name: ")
-total_cars = int(input("Enter the number of cars desired for roster: "))
-if total_cars > 60:
-    total_cars = 60
+while True:
+    folder_name = input("Enter roster name: ")
+    if unallowedchars.search(folder_name):
+        print("Roster name contains characters not allowed by Windows.")
+    else:
+        break
+
+while True:
+    try:
+        total_cars = int(input("Enter the number of cars desired for roster: "))
+        if total_cars < 1:
+            print("Please enter a number greater than or equal to 1.")
+        elif total_cars > 60:
+            total_cars = 60
+        break
+    except ValueError:
+        print("Please enter a number")
 
 with open("first_names.txt") as f:
     first_names = f.read().splitlines()
