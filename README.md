@@ -41,8 +41,8 @@ Where every name is on its own line.
 - [x] Add Late Models
 - [x] Add Super Late Models
 - [x] Rewrite car class selection to easily allow for the addition of new car classes
-- [ ] Add SK Modifieds
-- [ ] Add Tour Modifieds
+- [x] Add SK Modifieds
+- [x] Add Tour Modifieds
 - [ ] \(Optional) Add SK and Tour Modified roster option (Fun at trucks like Oxford)
 - [ ] Add Street Stocks
 - [ ] Add ARCA
