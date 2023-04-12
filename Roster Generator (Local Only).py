@@ -35,6 +35,7 @@ while True:
         car_path = "streetstock"
         sponsor1_range = [0]
         car_scheme_range = range(0, 19)
+        break
     elif car_class == "super late model":
         car_id = 54
         car_path = "superlatemodel"
