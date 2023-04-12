@@ -1,7 +1,7 @@
 import os, random, json, uuid, re
 
 directory_path = r"C:\Users\Admin\Documents\iRacing\airosters"
-unallowedchars = re.compile(r'[\ / : * ? " < > |]')
+unallowedchars = re.compile(r'[\/:*?"<>|]')
 
 while True:
     print("Enter desired car class. (ARCA, Indycar, Late Model, NASCAR Cup, NASCAR Cup 87, NASCAR Truck, NASCAR XFINITY, SK Modified, Street Stock, Super Late Model, Tour Modified)")
