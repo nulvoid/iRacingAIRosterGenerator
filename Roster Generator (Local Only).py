@@ -31,7 +31,10 @@ while True:
         car_scheme_range = range(1, 24)
         break
     elif car_class == "street stock":
-        print("Street Stocks have not yet been added to this program. Please choose another car class.")
+        car_id = 36
+        car_path = "streetstock"
+        sponsor1_range = [0]
+        car_scheme_range = range(0, 19)
     elif car_class == "super late model":
         car_id = 54
         car_path = "superlatemodel"
