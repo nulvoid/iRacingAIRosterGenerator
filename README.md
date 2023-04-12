@@ -44,7 +44,7 @@ Where every name is on its own line.
 - [x] Add SK Modifieds
 - [x] Add Tour Modifieds
 - [ ] \(Optional) Add SK and Tour Modified roster option (Fun at trucks like Oxford)
-- [ ] Add Street Stocks
+- [x] Add Street Stocks
 - [ ] Add ARCA
 - [ ] Add Legends
 - [ ] Add NASCAR Trucks
