@@ -75,6 +75,7 @@ with open("last_names.txt") as f:
     last_names = f.read().splitlines()
 with open("colors.txt", "r") as f:
     colors = f.readlines()
+suffixes = ["Jr.", "Sr.", "II", "III", "IV"]
 
 def generate_ratings(skill_level):
     if skill_level == "High":
@@ -99,13 +100,13 @@ used_car_numbers = []
 
 for i in range(total_cars):
     car_number = random.randint(0, 99)
-    if random.random() < 0.5:  # 50% probability
+    if random.random() < 0.5:
         car_number = f"{car_number:02d}"
     else:
         car_number = str(car_number)
     while car_number in used_car_numbers:
         car_number = random.randint(0, 99)
-        if random.random() < 0.5:  # 50% probability
+        if random.random() < 0.5:
             car_number = f"{car_number:02d}"
         else:
             car_number = str(car_number)
@@ -116,6 +117,11 @@ for i in range(total_cars):
     pit_crew_skill = random.randint(0, 100)
     pit_strategy_riskiness = random.randint(0, 100)
     first_name, last_name = random.choice(first_names), random.choice(last_names)
+    if random.random() < 0.1:
+        suffix = random.choice(suffixes)
+        full_name = f"{first_name} {last_name} {suffix}"
+    else:
+        full_name = f"{first_name} {last_name}"
     sponsor1 = random.choice(sponsor1_range)
     car_scheme = random.choice(car_scheme_range)
     color_line = random.choice(colors).strip().split(" ")
@@ -126,7 +132,7 @@ for i in range(total_cars):
     car_design = f"{car_scheme},{color1},{color2},{color3}"
 
     driver = {
-        "driverName": f"{first_name} {last_name}",
+        "driverName": f"{full_name}",
         "carNumber": f"{car_number}",
         "carDesign": car_design,
         "suitDesign": "4,000000,000000,000000",
